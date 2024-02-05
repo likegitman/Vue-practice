@@ -1,7 +1,13 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png" />
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  <div>{{ name }}</div>
+  <div class="menu">
+    <a v-for="(menu, idx) in menues" :key="idx">{{ menu }}</a>
+  </div>
+  <div v-for="(product, idx) in products" :key="idx">
+    <h4>{{ product }}</h4>
+    <p>50만원</p>
+  </div>
 </template>
 
 <script>
@@ -11,7 +17,8 @@ export default {
   name: "App",
   data() {
     return {
-      name: "woonrin",
+      menues: ["Home", "Product", "About"],
+      products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
     };
   },
   components: {
