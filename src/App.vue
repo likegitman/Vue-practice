@@ -7,19 +7,29 @@
   <div v-for="(product, idx) in products" :key="idx">
     <h4>{{ product }}</h4>
     <p>50만원</p>
+    <button v-on::click="reportCnt++">허위매물 신고 버튼</button
+    ><spam>신고 수: {{ reportCnt }}</spam>
+    <button v-on::click="increase">허위매물 신고 버튼</button
+    ><spam>신고 수: {{ reportCnt }}</spam>
+    <button @click="reportCnt++">허위매물 신고 버튼</button
+    ><spam>신고 수: {{ reportCnt }}</spam>
   </div>
 </template>
 
 <script>
-// import HelloWorld from './components/HelloWorld.vue'
-
 export default {
   name: "App",
   data() {
     return {
+      reportCnt: 0,
       menues: ["Home", "Product", "About"],
       products: ["역삼동원룸", "천호동원룸", "마포구원룸"],
     };
+  },
+  methods: {
+    increase() {
+      this.reportCnt++;
+    },
   },
   components: {
     // HelloWorld
